@@ -3,3 +3,7 @@
 \build
 *.log
 *.class
+/gradle/wrapper/gradle-wrapper.jar
+/gradlew
+/gradlew.bat
+/gradle/wrapper/gradle-wrapper.properties
