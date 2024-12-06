@@ -29,23 +29,33 @@ dependencies {
             'io.qameta.allure:allure-selenide:2.20.1')
 }
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
+//tasks.withType(Test) {
+//    useJUnitPlatform()
+//    systemProperties(System.getProperties())
+////    options.encoding = 'UTF-8'
+//}
+
+task one_property_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("one_property")
+    }
 }
 
-test {
-    useJUnitPlatform()
-    systemProperties(System.getProperties())
+task hello_test(type: Test) {
     useJUnitPlatform {
-        includeTags("simple")
-        excludeTags("Not")
+        includeTags("SystemPropertyTest")
+        excludeTags("one_property")
     }
-//    task simple_test(type: Test) {
-//        useJUnitPlatform {
-//            includeTags("simple")
-//        }
-//    }
 }
+
+//test {
+//    useJUnitPlatform()
+//    systemProperties(System.getProperties())
+//    useJUnitPlatform {
+//        includeTags("simple")
+//        excludeTags("Not")
+//    }
+//}
 
 
 
